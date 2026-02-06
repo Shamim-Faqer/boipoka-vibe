@@ -17,8 +17,12 @@ const links = (
 
 const menuButtons = (
   <div className="flex gap-3">
-    <button className="btn bg-[#23BE0A] text-white">Login</button>
-    <button className="btn bg-[#59C6D2] text-white">Sign Up</button>
+    <NavLink to="/Login">
+      <button className="btn bg-[#23BE0A] text-white">Login</button>
+    </NavLink>
+    <NavLink to="/Signup">
+      <button className="btn bg-[#59C6D2] text-white">Sign Up</button>
+    </NavLink>
   </div>
 );
 

@@ -1,4 +1,6 @@
+import link from "daisyui/components/link";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Books() {
   const [books, setBooks] = useState([]);
@@ -14,7 +16,11 @@ function Books() {
     <div className="max-w-1170px mx-auto p-4">
       <h2 className="text-4xl font-bold text-center my-10">Books</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* /////////////
+        ////////////
+        ////////// */}
         {books.map((book) => (
+          <Link key={book.bookId} to={`/book/${book.bookId}`}>
           <div className="card bg-base-100 rounded w-96 shadow-xl">
             <figure className="px-10 pt-10">
               <img src={book.image} className="rounded-xl" />
@@ -32,6 +38,7 @@ function Books() {
               </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
